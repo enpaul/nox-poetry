@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "nox-poetry"
+version = "0.1.0"
+license = "MIT"
+authors = ["Ethan Paul <24588726+enpaul@users.noreply.github.com>"]
+description = "A plugin for Nox that lets you install test environment dependencies from the Poetry lockfile"
+repository = "https://github.com/enpaul/nox-poetry/"
+packages = [
+  {include = "nox_poetry"},
+  {include = "tests/*.py", format = "sdist"}
+]
+include = [
+  "nox_poetry/py.typed"
+]
+keywords = ["nox", "poetry", "plugin"]
+readme = "README.md"
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Environment :: Plugins",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[tool.poetry.extras]
+poetry = ["poetry"]
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+nox = "^2020.12.31"
+poetry = {version = "^1.0.0", optional = true}
+poetry-core = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+bandit = "^1.6.2"
+black = {version = "^21.5b1", allow-prereleases = true}
+blacken-docs = "^1.8.0"
+ipython = { version = "^7.18.1", python = "^3.7" }
+mdformat = "^0.6.4"
+mdformat-gfm = "^0.2"
+mypy = "^0.782"
+pre-commit = "^2.7.1"
+pre-commit-hooks = "^3.3.0"
+pylint = "^2.4.4"
+pytest = "^6.0.2"
+pytest-cov = "^2.10.1"
+reorder-python-imports = "^2.3.5"
+safety = "^1.9.0"
+toml = "^0.10.1"
+nox = "^2020.12.31"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
